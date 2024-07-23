@@ -6,9 +6,9 @@ set(CMAKE_CXX_STANDARD 11)
 find_package(pybind11 REQUIRED)
 
 # Manually specify the Python paths
-set(PYTHON_EXECUTABLE "/home/thinker0/.pyenv/versions/SANDBOX_312/bin/python3")
-set(PYTHON_INCLUDE_DIR "/home/thinker0/.pyenv/versions/3.12.0b4/include/python3.12")
-set(PYTHON_LIBRARY "/home/thinker0/.pyenv/versions/3.12.0b4/lib/libpython3.12.so")
+set(PYTHON_EXECUTABLE "/home/thinker0/.pyenv/versions/SANDBOX_310/bin/python3")
+set(PYTHON_INCLUDE_DIR "/home/thinker0/.pyenv/versions/3.10.11/include/python3.10")
+set(PYTHON_LIBRARY "/home/thinker0/.pyenv/versions/3.10.11/lib/libpython3.10.so")
 
 include_directories(${PYTHON_INCLUDE_DIR})
 link_directories(${PYTHON_LIBRARY})
