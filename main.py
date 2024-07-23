@@ -1,3 +1,11 @@
+import sys
+import os
+
+# Add the build directory to sys.path
+current_dir = os.path.dirname(os.path.abspath(__file__))
+build_dir = os.path.join(current_dir, 'src', 'build')
+sys.path.insert(0, build_dir)
+
 from PySide2.QtWidgets import QApplication, QMainWindow, QWidget, QVBoxLayout
 from PySide2.QtGui import QPainter, QColor
 from PySide2.QtCore import QTimer
