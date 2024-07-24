@@ -17,10 +17,11 @@ class ParticleWidget(QWidget):
         self.simulator = simulator
         self.timer = QTimer(self)
         self.timer.timeout.connect(self.update_simulation)
-        self.timer.start(100)  # Update every 100 ms
+        self.timer.start(1)  # Update every 100 ms
 
     def update_simulation(self):
-        self.simulator.runTicks(1)
+        tics = 0.01
+        self.simulator.run(tics)
         self.update()
 
     def paintEvent(self, event):
@@ -28,7 +29,9 @@ class ParticleWidget(QWidget):
         painter.setBrush(QColor(255, 0, 0))
         for pos in self.simulator.getPoints():
             x, y = pos
+            print(pos)
             painter.drawEllipse(int(x), int(y), 5, 5)
+        
 
 class MainWindow(QMainWindow):
     def __init__(self, simulator):
@@ -45,9 +48,9 @@ class MainWindow(QMainWindow):
 if __name__ == '__main__':
     app = QApplication([])
 
-    simulator = simulation.Simulator("test", 1)
-    simulator.addParticle(100, 100, 2, 2)
-
+    simulator = simulation.Simulator("test", 2)
+    simulator.addParticle(1, 260, 250, 0, 0, 0, 0)
+    simulator.addParticle(1, 275, 250, 0, 0, 0, 0)
     window = MainWindow(simulator)
     window.show()
 
