@@ -43,8 +43,8 @@ public:
         }
     }    
 
-    std::vector<std::tuple<double,double>> getPoints() {
-        std::vector<std::tuple<double,double>> result;
+    std::vector<std::tuple<double,double,double>> getPoints() {
+        std::vector<std::tuple<double,double,double>> result;
         for (auto p : _points) {
             result.push_back(p.get_pos());
         }

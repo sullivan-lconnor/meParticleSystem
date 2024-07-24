@@ -79,7 +79,7 @@ public:
 
     void set_mass(double mass) { _mass = mass; }
 
-    std::tuple<double, double> get_pos() const { return std::make_tuple(get_x(), get_y()); }
+    std::tuple<double, double, double> get_pos() const { return std::make_tuple(get_mass(), get_x(), get_y()); }
 
 public:
     // Control functions
