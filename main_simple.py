@@ -49,8 +49,8 @@ if __name__ == '__main__':
     app = QApplication([])
 
     simulator = simulation.Simulator("test", 2)
-    simulator.addParticle(1, 260, 250, 0, 0, 0, 0)
-    simulator.addParticle(1, 275, 250, 0, 0, 0, 0)
+    simulator.addParticle(1, 250, 250, 0, 0, 0, 0)
+    simulator.addParticle(5, 275, 250, 0, 0, 0, 0)
     window = MainWindow(simulator)
     window.show()
 

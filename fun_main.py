@@ -67,7 +67,7 @@ if __name__ == '__main__':
 
     simulator = simulation.Simulator("test", 2)
     window = MainWindow(simulator)
-    window.addRandomParticles(num_particles=1000)  # Generate 50 random particles
+    window.addRandomParticles(num_particles=500)  # Generate 50 random particles
     window.show()
 
     app.exec_()

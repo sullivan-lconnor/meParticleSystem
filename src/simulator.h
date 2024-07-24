@@ -103,8 +103,10 @@ public:
         double y_dir = (b.get_y()-a.get_y());
         double magnitude = std::sqrt( std::pow(x_dir, 2) + std::pow(y_dir,2) );
 
-        double x_acc = ( A * (x_dir/magnitude) );
-        double y_acc = ( A * (y_dir/magnitude) );
+        // a is moving towards b and we are calculating a force so we need to divide by the mass
+        //  of the particle being moved., which by convention is particle a.
+        double x_acc = ( A * (x_dir/magnitude) ) / a.get_mass();
+        double y_acc = ( A * (y_dir/magnitude) ) / a.get_mass();
         
         result.set_ddx(x_acc);
         result.set_ddy(y_acc);
